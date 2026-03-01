@@ -4,7 +4,7 @@
 
 ## 数据存储与使用
 
-- **本地配置**：您填写的 API 服务地址、App ID、App Secret、默认短链域名、列表显示条数等配置，仅保存在您浏览器本地的 `chrome.storage.local` 中。
+- **本地配置**：您填写的 API 服务地址、App ID、App Secret、默认短链域名、列表显示条数等配置，仅保存在您浏览器本地存储（如 Chrome 的 `chrome.storage.local` / Firefox 的本地存储）中。
 - **不上传**：上述配置与任何个人数据均不会上传至本扩展开发者或任何第三方服务器。
 
 ## 网络请求

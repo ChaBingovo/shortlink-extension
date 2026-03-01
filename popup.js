@@ -44,12 +44,12 @@
 
   DOM.openOptions?.addEventListener('click', (e) => {
     e.preventDefault();
-    chrome.runtime.openOptionsPage();
+    browser.runtime.openOptionsPage();
     window.close();
   });
 
   DOM.openOptionsFromMain?.addEventListener('click', () => {
-    chrome.runtime.openOptionsPage();
+    browser.runtime.openOptionsPage();
     window.close();
   });
 
@@ -144,7 +144,7 @@
       return;
     }
     if (openBtn) {
-      chrome.tabs.create({ url: openBtn.dataset.open ?? '' });
+      browser.tabs.create({ url: openBtn.dataset.open ?? '' });
       return;
     }
     if (toggleBtn && !toggleBtn.disabled) {
@@ -260,9 +260,10 @@
     DOM.quickAddResult.innerHTML = '';
     DOM.quickAdd.disabled = true;
     try {
-      const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+      const [tab] = await browser.tabs.query({ active: true, currentWindow: true });
       const url = tab?.url ?? '';
-      if (!url || url.startsWith('chrome://') || url.startsWith('edge://')) {
+      const isInternalPage = /^(chrome|edge|about|moz-extension):\/\//i.test(url);
+      if (!url || isInternalPage) {
         showCreateResult(null, '当前页面无法生成短链（请打开普通网页）');
         return;
       }
@@ -297,13 +298,9 @@
       const domainForCreate = DOM.domainFilter?.value?.trim() || undefined;
       await createShortLinkFromUrl(url, undefined, domainForCreate);
     } catch (err) {
-      const hasClipboard = await new Promise((r) =>
-        chrome.permissions.contains({ permissions: ['clipboardRead'] }, r)
-      );
+      const hasClipboard = await browser.permissions.contains({ permissions: ['clipboardRead'] });
       if (!hasClipboard) {
-        const granted = await new Promise((r) =>
-          chrome.permissions.request({ permissions: ['clipboardRead'] }, r)
-        );
+        const granted = await browser.permissions.request({ permissions: ['clipboardRead'] });
         showCreateResult(
           null,
           granted ? '已获得剪贴板权限，请再次点击「从剪贴板生成短链」' : '需要剪贴板权限才能读取链接，请允许后重试'

@@ -1,8 +1,8 @@
-# 木雷短链助手 Chrome 扩展
+# 木雷短链助手 浏览器扩展
 
 [![GitHub](https://img.shields.io/badge/GitHub-ChaBingovo%2Fshortlink--extension-blue?logo=github)](https://github.com/ChaBingovo/shortlink-extension)
 
-基于 [木雷短网址 API](https://www.mliev.com/docs/dwz/api/api-doc) 的 Chrome 扩展，支持在浏览器中管理短链，并**一键将当前标签页或剪贴板链接生成短链**。
+基于 [木雷短网址 API](https://www.mliev.com/docs/dwz/api/api-doc) 的浏览器扩展，支持 **Chrome** 与 **Firefox**。使用 [webextension-polyfill](https://github.com/mozilla/webextension-polyfill) 统一 `browser.*` API，在浏览器中管理短链，并**一键将当前标签页或剪贴板链接生成短链**。
 
 ## 功能
 
@@ -17,9 +17,8 @@
 ### 从本仓库安装（开发者模式）
 
 1. 克隆仓库：`git clone https://github.com/ChaBingovo/shortlink-extension.git`
-2. 打开 Chrome，进入 `chrome://extensions/`
-3. 开启右上角「开发者模式」
-4. 点击「加载已解压的扩展程序」，选择克隆下来的项目目录
+2. **Chrome**：打开 `chrome://extensions/`，开启「开发者模式」，点击「加载已解压的扩展程序」，选择项目目录。
+3. **Firefox**：打开 `about:debugging` →「此 Firefox」→「临时载入附加组件」，选择项目目录下的 `manifest.json`。
 
 ## 配置说明
 
@@ -34,7 +33,8 @@
 ## 技术说明
 
 - 认证方式：HMAC-SHA256 签名（参见 [签名认证文档](https://www.mliev.com/docs/dwz/api/signature-auth)）
-- 配置保存在浏览器本地 `chrome.storage.local`，不会上传
+- 使用 webextension-polyfill 统一为 `browser.*` API，兼容 Chrome / Firefox
+- 配置保存在浏览器本地存储（如 `browser.storage.local`），不会上传
 
 ## 图标
 

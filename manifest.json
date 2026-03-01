@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "木雷短链助手",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "基于木雷短网址 API 管理短链，支持当前页一键生成短链",
   "permissions": ["storage", "activeTab"],
   "optional_permissions": ["clipboardRead"],
