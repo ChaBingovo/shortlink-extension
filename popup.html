@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>木雷短链助手</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- 未配置时显示引导 -->
+    <div id="welcome" class="panel hidden">
+      <div class="welcome-inner">
+        <h2>欢迎使用木雷短链助手</h2>
+        <p>请先配置 API 信息后即可管理短链并一键将当前网页生成短链。</p>
+        <a href="#" id="openOptions" class="btn primary">去配置</a>
+      </div>
+    </div>
+
+    <!-- 已配置：主界面 -->
+    <div id="main" class="panel hidden">
+      <header class="popup-header">
+        <h1>短链管理</h1>
+        <div class="header-right">
+          <select id="domainFilter" title="按域名筛选">
+            <option value="">全部域名</option>
+          </select>
+          <label class="header-checkbox" title="仅显示默认域名">
+            <input type="checkbox" id="defaultDomainOnly" /> 默认
+          </label>
+          <button type="button" id="openOptionsFromMain" class="icon-btn" title="设置">⚙</button>
+        </div>
+      </header>
+
+      <div class="quick-add">
+        <button type="button" id="quickAdd" class="btn primary full">
+          <span class="btn-icon">⊕</span> 将当前页面生成短链
+        </button>
+        <button type="button" id="clipboardAdd" class="btn secondary full">
+          <span class="btn-icon">⎘</span> 从剪贴板生成短链
+        </button>
+        <div id="quickAddResult" class="quick-result hidden"></div>
+      </div>
+
+      <div class="section">
+        <div class="section-head">
+          <span>最近短链</span>
+          <button type="button" id="refreshList" class="text-btn">刷新</button>
+        </div>
+        <div id="listWrap" class="list-wrap">
+          <div id="listLoading" class="loading hidden">加载中…</div>
+          <ul id="shortLinkList" class="short-link-list"></ul>
+          <div id="listEmpty" class="empty hidden">暂无短链，点击上方按钮从当前页创建</div>
+          <div id="listError" class="error hidden"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="lib/storage.js"></script>
+  <script src="lib/api.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
