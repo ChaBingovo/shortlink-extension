@@ -15,9 +15,13 @@
 ## 安装方式
 
 ### 从应用商店安装
+**Chrome**
 
-- **Chrome**：[Chrome 网上应用店 - 木雷短链助手](https://chromewebstore.google.com/detail/ijpalhhnmoeefipicfflpdfleipoblag?utm_source=item-share-cb)
-- **Firefox**：[Firefox 附加组件 - 木雷短链助手](https://addons.mozilla.org/zh-CN/firefox/addon/%E6%9C%A8%E9%9B%B7%E7%9F%AD%E9%93%BE%E5%8A%A9%E6%89%8B/)
+[![Chrome Web Store](https://img.shields.io/badge/Chrome-网上应用店-4285F4?logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/ijpalhhnmoeefipicfflpdfleipoblag?utm_source=item-share-cb)
+
+**Firefox**
+
+[![Firefox Add-ons](https://img.shields.io/badge/Firefox-附加组件-FF7139?logo=firefoxbrowser&logoColor=white)](https://addons.mozilla.org/zh-CN/firefox/addon/%E6%9C%A8%E9%9B%B7%E7%9F%AD%E9%93%BE%E5%8A%A9%E6%89%8B/)
 
 ### 从本仓库安装（开发者模式）
 
@@ -43,7 +47,7 @@
 
 ## 图标
 
-当前使用占位图标。可自行替换 `icons/` 目录下的 `icon16.png`、`icon32.png`、`icon48.png` 为 16×16、32×32、48×48 的 PNG。
+当前使用占位图标。可自行替换 `extension/icons/` 目录下的 `icon16.png`、`icon32.png`、`icon48.png` 为 16×16、32×32、48×48 的 PNG。
 
 ## 许可
 
