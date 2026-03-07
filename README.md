@@ -14,6 +14,11 @@
 
 ## 安装方式
 
+### 从应用商店安装
+
+- **Chrome**：[Chrome 网上应用店 - 木雷短链助手](https://chromewebstore.google.com/detail/ijpalhhnmoeefipicfflpdfleipoblag?utm_source=item-share-cb)
+- **Firefox**：[Firefox 附加组件 - 木雷短链助手](https://addons.mozilla.org/zh-CN/firefox/addon/%E6%9C%A8%E9%9B%B7%E7%9F%AD%E9%93%BE%E5%8A%A9%E6%89%8B/)
+
 ### 从本仓库安装（开发者模式）
 
 1. 克隆仓库：`git clone https://github.com/ChaBingovo/shortlink-extension.git`
